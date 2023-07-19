@@ -20,20 +20,27 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Quiz name</th>                           
+                            <th>Teacher name</th>  
+                            <th>Quiz</th>  
+                            <th>date</th>   
+                            <th>Time</th>               
                             <th>Action</th>
 
                         </tr>
                     </thead>
                     <thead>
                         <tbody>
+                            {{-- @dd($questions); --}}
                             @php $i=1 @endphp
-                            @foreach ($questions as $question)
+                            @foreach ($quiz as $quizes)
                                 <tr>
                                     <td>{{ $i++ }}</td>
-                                    <td>{{ $question->name }}</td>
+                                    <td>{{ $quizes->name }}</td>
+                                    <td>{{ $quizes->Quiz }}</td>
+                                    <td>{{$quizes->date}}</td>
+                                    <td>{{$quizes->Time}}</td>
                                     <td>
-                                        <a href="#"
+                                        <a href="{{ route('frontEnd.question.view') }}"
                                             class="btn btn-primary">Start Exam</a>
                                     </td>
                                 </tr>

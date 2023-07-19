@@ -41,10 +41,9 @@ class QuizController extends Controller
         
         $this->create = new quizes();      
         $this->create->name = $request->name;
-        $this->create->Description = $request->Description;
+        $this->create->Quiz = $request->Quiz;
         $this->create->date = $request->date;
         $this->create->Time = $request->Time;
-        $this->create->Number_of_question = $request->Number_of_question;
         $this->create->save();
         return back()->with('message', 'info create successfully');
     }
@@ -73,10 +72,9 @@ class QuizController extends Controller
     {
         $this->quiz=quizes::find($id);
         $this->quiz->name= $request->name;
-        $this->quiz->Description= $request->Description;
+        $this->quiz->Quiz= $request->Quiz;
         $this->quiz->date= $request->date;
         $this->quiz->Time= $request->Time;
-        $this->quiz->Number_of_question= $request->Number_of_question;
 
         $this->quiz->update();
         return redirect()->route('admin.exam.quiz.view');

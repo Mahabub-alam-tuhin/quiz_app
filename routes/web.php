@@ -5,7 +5,8 @@ use App\Http\Controllers\frontController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\questionController;
-
+use App\Http\Controllers\examController;
+use App\Http\Controllers\answerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,8 @@ use App\Http\Controllers\questionController;
 
 Route::get('/', [frontController::class, 'index'])->name('/');
 Route::get('/view', [frontController::class, 'view'])->name('frontEnd.exam.view');
+Route::get('/question', [examController::class, 'question'])->name('frontEnd.question.view');
+Route::post('/store', [examController::class, 'store'])->name('frontEnd.question.store');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 //    Route::get('/dashboard', function () {
@@ -53,6 +56,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/delete/{id}', [questionController::class, 'delete'])->name('admin.exam.question.delete');
 
     });
-
    
 });

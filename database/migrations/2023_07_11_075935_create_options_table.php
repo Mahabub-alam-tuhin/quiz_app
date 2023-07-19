@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('Question_id')->unsigned();
             $table->string('options')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

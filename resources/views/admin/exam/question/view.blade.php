@@ -51,9 +51,12 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Quiz name</th>
+                            <th>Teacher name</th>
                             <th>Question</th>
-                            <th>options</th>
+                            <th>option_1</th>
+                            <th>option_2</th>
+                            <th>option_3</th>
+                            <th>option_4</th>
                             <th>Right Answer</th>
                             <th>Action</th>
 
@@ -67,11 +70,10 @@
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $question->name }}</td>
                                 <td>{{ $question->Question }}</td>
-                                <td>
-                                    <ul>
-                                        <li>{{ $question->options }}</li>
-                                    </ul>
-                                </td>
+                                <td>{{ $question->option_1 }}</td>
+                                <td>{{ $question->option_2 }}</td>
+                                <td>{{ $question->option_3 }}</td>
+                                <td>{{ $question->option_4 }}</td>
                                 <td>{{ $question->Answer }}</td>
                                 <td>
                                     <a href="{{ route('admin.exam.question.edit', $question->id) }}"

@@ -15,11 +15,10 @@
                     <thead>
                     <tr>
                         <th>Id</th> 
-                        <th>Quiz name</th>
-                        <th>Description</th>
+                        <th>Teacher name</th>
+                        <th>Quiz</th>
                         <th>Quiz Date</th>
                         <th>Quiz Time</th>
-                        <th>Number of question View for User</th>
                         <th>Add Question</th> 
                         <th>Action</th>
                         
@@ -32,10 +31,9 @@
                         <tr>
                             <td>{{$i++}}</td>
                             <td>{{$quiz->name}}</td>
-                            <td>{{$quiz->Description}}</td>
+                            <td>{{$quiz->Quiz}}</td>
                             <td>{{$quiz->date}}</td>
                             <td>{{$quiz->Time}}</td>
-                            <td>{{$quiz->Number_of_question}}</td>
                             <td><a href="{{route('admin.exam.question.add_question',$quiz->id)}}">Add Question</a></td>
                             <td>
                                 <a href="{{route('admin.exam.quiz.details',$quiz->id)}}" class="btn btn-info">Details</a>

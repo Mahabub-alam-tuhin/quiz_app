@@ -22,9 +22,13 @@ class questionController extends Controller
         $this->create = new question();      
         $this->create->name = $request->name;
         $this->create->Question = $request->Question;
+        $this->create->option_1= $request->option_1;
+        $this->create->option_2= $request->option_2;
+        $this->create->option_3= $request->option_3;
+        $this->create->option_4= $request->option_4;
         $this->create->Answer = $request->Answer; 
         $this->create->save();
-        $this->create->options=json_encode(request()->options);
+        
         $this->create->save();
         return back()->with('message', 'info create successfully');
     }
@@ -38,7 +42,10 @@ class questionController extends Controller
         $this->questions=question::find($id);
         $this->questions->name= $request->name;
         $this->questions->Question= $request->Question;
-        $this->questions->options= $request->options;
+        $this->questions->option_1= $request->option_1;
+        $this->questions->option_2= $request->option_2;
+        $this->questions->option_3= $request->option_3;
+        $this->questions->option_4= $request->option_4;
         $this->questions->Answer= $request->Answer;
         $this->questions->update();
         return redirect()->route('admin.exam.question.view');

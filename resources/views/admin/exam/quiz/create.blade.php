@@ -12,12 +12,12 @@
       @csrf
       <div class="card-body">
         <div class="form-group">
-          <label for="exampleInputEmail1">Quiz name</label>
-          <input type="text" name="name" class="form-control"  placeholder="Enter email">
+          <label for="exampleInputEmail1">Teacher name</label>
+          <input type="text" name="name" class="form-control"  placeholder="Enter name">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Description</label>
-          <input type="text" name="Description" class="form-control"  placeholder="Enter email">
+          <label for="exampleInputEmail1">Quiz</label>
+          <input type="text" name="Quiz" class="form-control"  placeholder="Enter Quiz">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Quiz Date</label>
@@ -25,12 +25,8 @@
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Quiz Time</label>
-          <input type="time" name="Time" class="form-control"  placeholder="Quiz date">
-        </div>  
-        <div class="form-group">
-          <label for="exampleInputEmail1">Number of question View for User</label>
-          <input type="text" name="Number_of_question" class="form-control"  placeholder="Quiz date">
-        </div>  
+          <input type="time" name="Time" class="form-control"  placeholder="Quiz Time">
+        </div>    
         <div class="form-group mb-0">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">

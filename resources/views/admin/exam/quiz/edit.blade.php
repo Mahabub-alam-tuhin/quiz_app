@@ -9,15 +9,15 @@
                     <div class="card-body">
                         <div class="border p-4 rounded">
                             <div class="row mb-3">
-                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">name</label>
+                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Teacher name</label>
                                 <div class="col-sm-9">
                                     <input type="text" value="{{  $quiz->name }}" name="name" class="form-control" id="inputEnterYourName" placeholder="Enter Your name">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Description</label>
+                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Quiz</label>
                                 <div class="col-sm-9">
-                                    <input type="text" value="{{  $quiz->Description }}" name="Description" class="form-control" id="inputPhoneNo2" placeholder="Description">
+                                    <input type="text" value="{{  $quiz->Quiz }}" name="Quiz" class="form-control" id="inputPhoneNo2" placeholder="Description">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -30,12 +30,6 @@
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Quiz Time</label>
                                 <div class="col-sm-9">
                                     <input type="text" value="{{  $quiz->Time }}" name="Time" class="form-control" id="inputPhoneNo2" placeholder="District">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Number of question View for User</label>
-                                <div class="col-sm-9">
-                                    <input type="text" value="{{  $quiz->Number_of_question }}" name="Number_of_question" class="form-control" id="inputPhoneNo2" placeholder="upazila">
                                 </div>
                             </div>
                             <div class="row">

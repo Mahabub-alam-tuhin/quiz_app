@@ -17,8 +17,8 @@ class frontController extends Controller
     public function view()
     {
        
-        $questions = question::all();
-        return view('frontEnd.exam.view', compact('questions'));
+        $quiz=quizes::all();
+        return view('frontEnd.exam.view', compact('quiz'));
     }
     
 }

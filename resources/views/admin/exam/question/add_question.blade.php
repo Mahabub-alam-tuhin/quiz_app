@@ -14,7 +14,7 @@
       @csrf
       <div class="card-body">
         <div class="form-group">
-          <label for="exampleInputEmail1">Quiz name</label>
+          <label for="exampleInputEmail1">Teacher name</label>
           <input type="text" value="{{ $quiz->name }}"  name="name" class="form-control"  placeholder="Quiz name">
         </div>
         <div class="form-group">
@@ -24,21 +24,21 @@
         <div class="row">
         <div class="col-md-6 form-group">
           <label for="exampleInputEmail1">Option 1</label>
-          <input type="text" name="options[]" class="form-control"  placeholder="Option">
+          <input type="text" name="option_1"  class="form-control"  placeholder="Option">
         </div>
         <div class="col-md-6 form-group">
           <label for="exampleInputEmail1">Option 2</label>
-          <input type="text" name="options[]" class="form-control"  placeholder="Option">
+          <input type="text" name="option_2"   class="form-control"  placeholder="Option">
         </div>  
         </div>
         <div class="row">
             <div class="col-md-6 form-group">
               <label for="exampleInputEmail1">Option 3</label>
-              <input type="text" name="options[]" class="form-control"  placeholder="Option">
+              <input type="text" name="option_3"   class="form-control"  placeholder="Option">
             </div>
             <div class="col-md-6 form-group">
               <label for="exampleInputEmail1">Option 4</label>
-              <input type="text" name="options[]" class="form-control"  placeholder="Option">
+              <input type="text" name="option_4"   class="form-control"  placeholder="Option">
             </div>  
             </div>
         <div class="form-group">
