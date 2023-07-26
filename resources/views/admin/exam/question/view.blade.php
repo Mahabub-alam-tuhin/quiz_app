@@ -51,6 +51,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>quiz_id</th>
                             <th>Teacher name</th>
                             <th>Question</th>
                             <th>option_1</th>
@@ -68,6 +69,7 @@
                         @foreach ($questions as $question)
                             <tr>
                                 <td>{{ $i++ }}</td>
+                                <td>{{ $question->quiz_id }}</td>
                                 <td>{{ $question->name }}</td>
                                 <td>{{ $question->Question }}</td>
                                 <td>{{ $question->option_1 }}</td>

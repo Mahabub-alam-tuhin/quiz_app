@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\answer;
 use App\Models\question;
+use App\Models\question_submission;
+use Database\Seeders\question_submissionSeeder;
 use Illuminate\Http\Request;
 
 class examController extends Controller
 {
-  public $answers;
+  public $submission;
     public function question(){
         $questions= question::all();
       return view('frontEnd.question.view',compact('questions'));
@@ -18,14 +19,13 @@ class examController extends Controller
     
     { 
       // dd(request()->all());
-        $this->answers = new answer();      
-        $this->answers->Question = $request->Question;
-        $this->answers->option_1= $request->option_1;
-        $this->answers->option_2= $request->option_2;
-        $this->answers->option_3= $request->option_3;
-        $this->answers->option_4= $request->option_4;
+        $this->submission = new  question_submission();      
+        $this->submission->quiz_id = $request->quiz_id;
+        $this->submission->ques_id = $request->ques_id;
+        $this->submission->submitted_answer= $request->submitted_answer;
+        $this->submission->user_id = $request->user_id;        
        
-        $this->answers->save();
+        $this->submission->save();
         return back()->with('message', 'info create successfully');
     }
 

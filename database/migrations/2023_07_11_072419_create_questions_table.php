@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->string('quiz_id')->nullable();
             $table->text('name')->nullable();
             $table->string('Question')->nullable();
             $table->string('option_1')->nullable();

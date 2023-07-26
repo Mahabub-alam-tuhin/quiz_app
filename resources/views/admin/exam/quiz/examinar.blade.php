@@ -15,11 +15,8 @@
                     <thead>
                     <tr>
                         <th>Id</th> 
-                        <th>Teacher name</th>
-                        <th>Quiz</th>
-                        <th>Quiz Date</th>
-                        <th>Quiz Time</th>
-                        <th>Add Question</th> 
+                        <th>user_id</th>
+                        <th>submitted_answer</th> 
                         <th>Action</th>
                         
                     </tr>
@@ -27,20 +24,13 @@
                     <thead>
                     <tbody>
                     @php $i=1 @endphp
-                    @foreach($quize as $quiz)
+                    @foreach($submission as $submissions)
                         <tr>
                             <td>{{$i++}}</td>
-                            <td>{{$quiz->name}}</td>
-                            <td>{{$quiz->Quiz}}</td>
-                            <td>{{$quiz->date}}</td>
-                            <td>{{$quiz->Time}}</td>
-                            <td><a href="{{route('admin.exam.question.add_question',$quiz->id)}}">Add Question</a></td>
+                            <td>{{$submissions->user_id}}</td>
+                            <td>{{$submissions->submitted_answer}}</td>
                             <td>
-                                <a href="{{route('admin.exam.quiz.details',$quiz->id)}}" class="btn btn-info">Details</a>
-                                <a href="{{route('admin.exam.quiz.edit',$quiz->id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{ route ('admin.exam.quiz.delete', $quiz->id)}}" class="btn btn-danger">Delete</a>
-                                <a href="{{ route ('admin.exam.quiz.examinar', $quiz->id)}}" class="btn btn-success">Examiner</a>
-
+                                <a href="{{ route ('admin.exam.quiz.examinar_details', $submissions->id)}}" class="btn btn-info">Details</a>                                
                             </td>
                         </tr>
                     @endforeach
@@ -51,3 +41,33 @@
         </div>
     </div>
 @endsection
+
+
+
+
+
+
+
+
+
+{{-- <a href="{{ route ('admin.exam.quiz.examinar', $quiz->id)}}" class="btn btn-success">Examiner</a> --}}
+
+
+
+{{-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    @foreach ($submission as $submissions)
+        user_id: {{ $submissions->user_id }}<br>
+        Right Answer:{{ $submissions->submitted_answer }}<br>
+    @endforeach
+
+</body>
+
+</html> --}}

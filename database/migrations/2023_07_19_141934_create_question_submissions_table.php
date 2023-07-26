@@ -11,26 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('question_submissions', function (Blueprint $table) {
             $table->id();
-            $table->string('Question')->nullable();
-            $table->string('option_1')->nullable();
-            $table->string('option_2')->nullable();
-            $table->string('option_3')->nullable();
-            $table->string('option_4')->nullable();
+            $table->string('quiz_id')->nullable();
+            $table->string('ques_id')->nullable();
+            $table->string('submitted_answer')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('status')->default(1);
             $table->timestamps();
         });
-        
-    }  
-    
-   
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('question_submissions');
     }
 };

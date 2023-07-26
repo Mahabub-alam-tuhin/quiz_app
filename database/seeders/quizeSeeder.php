@@ -16,12 +16,22 @@ class quizeSeeder extends Seeder
     {
         quizes::truncate();
         // Booking::factory(10)->create();
-        for($i = 1; $i<=10;$i++){
+        for($i = 1; $i<=4;$i++){
             $quize = new quizes;
-            $quize->name= "name jan $i";
-            $quize->Quiz="Quiz ";
-            $quize->date = "date ";
-            $quize->Time ="Time ";
+            $quize->name= "Mahabub";
+            $quize->Quiz="Bangla ";
+            $quize->date = "2023-07-19 $i";
+            $quize->Time ="10:05 $i";
+            $quize->status =(1);
+            $quize->created_at="2023-01-01 10:05"; 
+            $quize->save();
+        }
+        for($i = 1; $i<=4;$i++){
+            $quize = new quizes;
+            $quize->name= "Sakib ";
+            $quize->Quiz="English ";
+            $quize->date = "2023-07-19 $i";
+            $quize->Time ="10:05 $i";
             $quize->status =(1);
             $quize->created_at="2023-01-01 10:05"; 
             $quize->save();
@@ -29,3 +39,5 @@ class quizeSeeder extends Seeder
   
     }
 }
+
+

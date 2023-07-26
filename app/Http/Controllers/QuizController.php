@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\question;
+use App\Models\question_submission;
 use App\Models\quizes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
@@ -32,13 +35,7 @@ class QuizController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        // $this->validate($request,[
-        //     'name'=>'requird|unique:quizes',
-        // ]);
-        // $data=$request->all();
-    
-        
+    { 
         $this->create = new quizes();      
         $this->create->name = $request->name;
         $this->create->Quiz = $request->Quiz;
@@ -90,17 +87,43 @@ class QuizController extends Controller
          return redirect()->route('admin.exam.quiz.view');
      }
 
+   
+
      public function details($id)
      {
-         return view('admin.exam.quiz.details', [
-             'quiz' => quizes::find($id)
-         ]);
-     }
+        $quiz = quizes::find($id);
+        $questions = question::all();
+        
+        return view('admin.exam.quiz.details', compact('quiz','questions'));
+    }
 
-     public function add_question($id)
-     {
-        $quiz=quizes::find($id);
-        return view('admin.exam.question.add_question',compact('quiz'));
-     }
+
+
+    // public function examinar(){
+    //     return question_submission::select('ques_id','quiz_id')->groupby('ques_id','quiz_id')->get();
+    // }
+
+  
+    
+    public function examinar($id){
+   
+        $submission = question_submission::all();
+        return view('admin.exam.quiz.examinar',compact('submission'));
+    }
+
+    public function examinar_details($id){
+        $quiz = quizes::find($id);
+        $questions = question::all();
+        return view('admin.exam.quiz.examinar_details', compact('quiz','questions'));
+    }
+
+
+    public function add_question($id)
+    {
+       $quiz=quizes::find($id);
+       return view('admin.exam.question.add_question',compact('quiz'));
+    }
+
+    
    
 }

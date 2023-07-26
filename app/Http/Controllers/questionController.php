@@ -18,8 +18,10 @@ class questionController extends Controller
                 
     }
     public function store(Request $request)
+
     { 
-        $this->create = new question();      
+        $this->create = new question();
+        $this->create->quiz_id = $request->quiz_id;
         $this->create->name = $request->name;
         $this->create->Question = $request->Question;
         $this->create->option_1= $request->option_1;
@@ -40,6 +42,7 @@ class questionController extends Controller
     public function update(Request $request, $id)
     {
         $this->questions=question::find($id);
+        $this->questions->quiz_id = $request->quiz_id;
         $this->questions->name= $request->name;
         $this->questions->Question= $request->Question;
         $this->questions->option_1= $request->option_1;
