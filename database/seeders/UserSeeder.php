@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             $user = new User;
             $user->name= "Rakib";
             $user->email="Rakib@gmail.com";
+            $user->userRole="1";
             $user->password =Hash::make('12345678');
             $user->created_at="2023-01-01 10:05"; 
             $user->save();
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
             $user = new User;
             $user->name= "sakib";
             $user->email="sakib@gmail.com";
+            $user->userRole="2";
             $user->password =Hash::make('12345678');
             $user->created_at="2023-01-01 10:05"; 
             $user->save();
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             $user = new User;
             $user->name= "Aakib";
             $user->email="Aakib@gmail.com";
+            $user->userRole="1";
             $user->password = Hash::make('12345678');
             $user->created_at="2023-01-01 10:05"; 
             $user->save();
@@ -44,6 +47,7 @@ class UserSeeder extends Seeder
             $user = new User;
             $user->name= "Rashed";
             $user->email="Rashed@gmail.com";
+            $user->userRole="1";
             $user->password =Hash::make('12345678');
             $user->created_at="2023-01-01 10:05"; 
             $user->save();

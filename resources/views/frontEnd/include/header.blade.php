@@ -18,8 +18,8 @@
             <!-- <li><a href="#section5">Video</a></li> -->
             <li><a href="#section6">Contact</a></li>
             <li><a href="{{ route('frontEnd.exam.view') }}" class="external">Exam</a></li>
-            {{-- <li><a href="{{ route('frontEnd.student.login') }}" class="external">login</a></li>
-            <li><a href="{{ route('frontEnd.student.register') }}" class="external">Register</a></li> --}}
+            <li><a href="{{ route('frontEnd.student.login') }}" class="external">login</a></li>
+            <li><a href="{{ route('frontEnd.student.register') }}" class="external">Register</a></li>
       
         </ul>
     </nav>

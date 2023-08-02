@@ -31,10 +31,13 @@ Route::get('/', [frontController::class, 'index'])->name('/');
 Route::get('/view', [frontController::class, 'view'])->name('frontEnd.exam.view');
 Route::get('/question/{id}', [examController::class, 'question'])->name('frontEnd.question.view');
 Route::post('/store', [examController::class, 'store'])->name('frontEnd.question.store');
-// Route::get('/register', [loginControler::class, 'Register'])->name('frontEnd.student.register');
-// Route::post('/saveregister', [loginControler::class, 'saveregister'])->name('frontEnd.student.saveregister');
-// Route::get('/login', [loginControler::class, 'login'])->name('frontEnd.student.login');
+Route::get('/register', [loginControler::class, 'Register'])->name('frontEnd.student.register');
+Route::post('/saveregister', [loginControler::class, 'saveregister'])->name('frontEnd.student.saveregister');
+Route::get('/login', [loginControler::class, 'login'])->name('frontEnd.student.login');
 // Route::post('/loginCheck', [loginControler::class, 'loginCheck'])->name('frontEnd.student.loginCheck');
+
+
+
 
 
 Route::get('/test', function () {
@@ -79,11 +82,12 @@ dd($quiz);
 
 
 
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     //    Route::get('/dashboard', function () {
     //        return view('dashboard');
     //    })->name('dashboard');
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('role:admin');
 
 
     Route::prefix('quiz')->group(function () {

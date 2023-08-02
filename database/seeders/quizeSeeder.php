@@ -16,7 +16,7 @@ class quizeSeeder extends Seeder
     {
         quizes::truncate();
         // Booking::factory(10)->create();
-        for($i = 1; $i<=4;$i++){
+        for($i = 1; $i<=1;$i++){
             $quize = new quizes;
             $quize->name= "Mahabub";
             $quize->Quiz="Bangla ";
@@ -26,7 +26,7 @@ class quizeSeeder extends Seeder
             $quize->created_at="2023-01-01 10:05"; 
             $quize->save();
         }
-        for($i = 1; $i<=4;$i++){
+        for($i = 1; $i<=1;$i++){
             $quize = new quizes;
             $quize->name= "Sakib ";
             $quize->Quiz="English ";
