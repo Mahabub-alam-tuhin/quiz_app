@@ -42,7 +42,7 @@
                     <div class="top-content">
                         <h6>Register your free account and <em>get immediate</em> access to online courses</h6>
                     </div>
-                    <form action="{{route('frontEnd.student.login')}}" method="post">
+                    <form action="{{route('frontEnd.student.loginCheck')}}" method="post">
                         <h6 class="text-center text-danger">{{ session('message') }}</h6>
                           @csrf
                           <div class="row">
